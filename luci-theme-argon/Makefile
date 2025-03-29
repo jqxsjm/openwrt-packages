@@ -17,7 +17,7 @@ include $(TOPDIR)/feeds/luci/luci.mk
 
 define Package/luci-theme-argon/config
     config PACKAGE_luci-theme-argon
-        bool "Enable Argon Theme"
+        bool "Argon Theme"
         default y
         select PACKAGE_luci-compat
 endef
