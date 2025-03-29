@@ -15,11 +15,11 @@ CONFIG_LUCI_CSSTIDY:=
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
+# 强制默认启用插件和依赖项
 define Package/luci-theme-argon/config
-    config PACKAGE_luci-theme-argon
-        bool "Argon Theme"
-        default y
-        select PACKAGE_luci-compat
+    select PACKAGE_luci-theme-argon
+    select PACKAGE_curl
+    select PACKAGE_jsonfilter
 endef
 
 # call BuildPackage - OpenWrt buildroot signature
