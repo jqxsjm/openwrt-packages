@@ -17,9 +17,9 @@ include $(TOPDIR)/feeds/luci/luci.mk
 
 # 强制默认启用插件和依赖项
 define Package/luci-theme-argon/config
-    select PACKAGE_luci-theme-argon
-    select PACKAGE_curl
-    select PACKAGE_jsonfilter
+    config PACKAGE_luci-theme-argon
+        bool "Uses UCI scripts"
+	depends on PACKAGE_luci-theme-argon
+        default y
 endef
-
 # call BuildPackage - OpenWrt buildroot signature
